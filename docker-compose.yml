@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+  main:
+    build: .
+
+  #  external_links:
+    links:
+      - "postgres:postgres"
+
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgresql://root:root@postgres/hello_heroku_development?pool=2
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ".:/products"
+
+    command: "/products/run.sh"
+
+  postgres:
+    image: postgres
+
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
