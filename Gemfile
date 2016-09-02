@@ -28,6 +28,8 @@ gem 'puma'
 
 gem 'redis'
 
+gem 'foreman'
+
 gem "sidekiq"
 gem "sidekiq-cron"
 gem "sidekiq-limit_fetch"
