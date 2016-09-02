@@ -7,10 +7,12 @@ services:
   #  external_links:
     links:
       - "postgres:postgres"
+      - "redis:redis"
 
     environment:
       RAILS_ENV: development
       DATABASE_URL: postgresql://root:root@postgres/hello_heroku_development?pool=2
+      REDIS_URL: redis://redis
 
     ports:
       - "3000:3000"
@@ -26,3 +28,9 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
+
+  redis:
+    image: redis
+
+    ports:
+      - "6379:6379"
