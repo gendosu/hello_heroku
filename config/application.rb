@@ -25,7 +25,5 @@ module HelloHeroku
 
     config.active_job.queue_adapter = :sidekiq
 
-    config.autoload_paths += %W(#{config.root}/app/jobs)
-
   end
 end
