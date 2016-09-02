@@ -28,6 +28,10 @@ gem 'puma'
 
 gem 'redis'
 
+gem "sidekiq"
+gem "sidekiq-cron"
+gem "sidekiq-limit_fetch"
+
 group :production do
   # stdout logging and so on
   gem 'rails_12factor'
